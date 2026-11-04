@@ -23,6 +23,16 @@ Each row in `train.csv`, `dev.csv`, or `test.csv` contains:
 - `previous_change`: observed cosine distance in the preceding interval (input)
 - `actual_change`: observed cosine distance in the target interval (target)
 
+### Example rows from `train.csv`
+
+| word | start_year | end_year | previous_change | actual_change |
+|---|---:|---:|---:|---:|
+| mouse | 1810 | 1820 | 0.399011 | 0.418369 |
+| mouse | 1820 | 1830 | 0.418369 | 0.472803 |
+| water | 1810 | 1820 | 0.164997 | 0.180279 |
+
+These are real rows from our training data, with scores rounded to six decimal places. For example, the first row uses *mouse*'s observed change from 1800–1810 (`previous_change`) as the input and its observed change from 1810–1820 (`actual_change`) as the target. No model predictions are included.
+
 We split the data chronologically:
 
 | Split | Target intervals | Rows |
